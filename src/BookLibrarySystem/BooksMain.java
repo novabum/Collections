@@ -3,7 +3,7 @@ package BookLibrarySystem;
 import java.util.HashSet;
 
 
-public class Main {
+public class BooksMain {
     public static void main(String[] args) {
         Library library = new Library(new HashSet<>());
         Book book1 = new Book("A fenyvedék nyuggerája", "Nyomi Genny", 435234213);

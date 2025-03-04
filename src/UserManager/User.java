@@ -1,3 +1,5 @@
+package UserManager;
+
 public class User {
     private int id;
     private final String name;
