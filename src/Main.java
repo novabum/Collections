@@ -1,32 +1,23 @@
-import java.util.HashSet;
+import java.util.ArrayList;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        /* 1. feladat: User management system
-        User class - id, name, email
-        UserManager class - Usereket tárol, és a céljának megfelelően egy User többször is megjelenhet a tárolóban;
-            - van egy getUserByEmail metódusa (ha nem talál, null-t ad vissza)
-        - ignorálja, ha az email cím többször szerepel
-        - van egy  getAllUserEmails metódusa, amely az összes email
-        címet visszaadja - lehet duplikáció
-        - és van egy getUsersByEmail amely mindig egy collection-t ad vissza,
-        ha nem talál User-t egyáltalán, akkor szimplán üres lesz a lista. - lehet duplikáció
-        */
-        //megidézem a usermanagert
-        UserManager userManager = new UserManager(new HashSet<>());
-
+        UserManager userManager = new UserManager(new ArrayList<>());
+        //megidézem a usermanagerből a seteket.
         //létrehozom a usereket a constructorral
         User user1 = new User(1, "Sanyi", "sanyivagyok@sanyi.de");
-        User user2 = new User(2, "Sanyi", "sanyivagyok@sanyi.de");
-        User user3 = new User(3, "Józsi", "anustitan11@yoyo.he");
-        User user4 = new User(4, "Józsi", "anustitan11@yoyo.he");
-        User user5 = new User(5, "NyestEmber", "ragogumi@ssdao.ss");
+        User user3 = new User(2, "Józsi", "anustitan11@yoyo.he");
+        User user5 = new User(312, "NyestEmber", "ragogumi@ssdao.ss");
         //hozzáadom őket a set-hez
-        userManager.addToSet(user1, user2, user3, user4, user5);
+        userManager.addToList(user1, user1, user3, user3, user5);
 
+        System.out.println(userManager.getUserByEmail("sanyivagyok@sanyi.de").toString());
+        System.out.println("--------------");
 
+        userManager.getAllUserEmails();
+        System.out.println("--------------");
+
+        System.out.println(userManager.getUsersByEmail("SanYivagYok@sanyI.dE").toString());
 
 
     }
