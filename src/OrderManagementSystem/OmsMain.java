@@ -1,11 +1,12 @@
 package OrderManagementSystem;
-
 import java.time.LocalDate;
+
 
 public class OmsMain {
     public static void main(String[] args) {
 
         OrderManager orderManager = new OrderManager();
+
 
         //készítsünk pár vásárlót
         Customer customer1 = new Customer("sdgjg", "asfkg@asjbg.ss");
@@ -17,11 +18,8 @@ public class OmsMain {
         Order order2 = new Order(245455, LocalDate.of(2024, 12, 11));
         Order order3 = new Order(2433355, LocalDate.of(1990, 4, 22));
 
-        orderManager.placeOrder(order1, customer1.getEmail());
-        orderManager.placeOrder(order2, customer1.getEmail());
-        orderManager.placeOrder(order3, customer1.getEmail());
-//        orderManager.printOrders();
 
-        System.out.println(orderManager.getLatestOrderOfUser(customer1).toString());
+        orderManager.placeOrder(customer1, order1, order2, order3);
+        System.out.println(orderManager.getLatestOrderOfUser("asfkg@asjbg.ss").toString());
     }
 }

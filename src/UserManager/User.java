@@ -1,4 +1,7 @@
 package UserManager;
+
+import java.util.List;
+
 //a felhasználók tulajdonságai private mert csak itt használjuk, final ,mert nem változik
 public class User {
     private int id;

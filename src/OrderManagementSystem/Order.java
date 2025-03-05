@@ -12,6 +12,11 @@ public class Order {
         this.localdate = ld;
     }
 
+    @Override
+    public String toString() {
+        return (totalAmount+", "+localdate);
+    }
+
     public LocalDate getLocaldate() {
         return localdate;
     }
