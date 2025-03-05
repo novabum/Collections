@@ -25,7 +25,7 @@ public class UserManager {
         /*public, hogy meghívhható legyen Mainből
         email string alapján megkeresi a user nevét
         Usert ad vissza.
-        emailt kérünk be hozzá, azt vizsgáljuk a ciklusban, ha találunk visszaadjuk a Usert.
+        emailt kérünk be hozzá, azt vizsgáljuk a ciklusban. Ha találunk visszaadjuk a Usert.
          */
    public User getUserByEmail(String email){
        for (User user : users)
@@ -36,7 +36,7 @@ public class UserManager {
    }
     /*public, hogy meghívhható legyen Mainből
     void, mert nem ad vissza semmit
-    végigiterálunk a users-en és kiírjuk az aktuális user email címét
+    végigiterálunk a users-en és kiírjuk a userek emailcímét
          */
     public void getAllUserEmails(){
         for (User user : users)
@@ -47,6 +47,7 @@ public class UserManager {
     public, hogy meghívhható legyen Mainből
     egy user List-et ad vissza
     egy email címet vár paraméterként, a duplikációkat is visszaadja.
+    ha az első találat után meg kellene állnia, kellene az ifbe egy brake
     */
     public List<User> getUsersByEmail(String email){
         List<User> userFound = new ArrayList<>(List.of());

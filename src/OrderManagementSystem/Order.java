@@ -1,18 +1,17 @@
 package OrderManagementSystem;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Order {
     private Integer totalAmmount;
-    private LocalDate ld;
+    private LocalDate localdate;
 
     public Order(Integer totalAmmount, LocalDate ld) {
         this.totalAmmount = totalAmmount;
-        this.ld = ld;
+        this.localdate = ld;
     }
 
-    public LocalDate getLd() {
-        return ld;
+    public LocalDate getLocaldate() {
+        return localdate;
     }
 }

@@ -1,8 +1,8 @@
 package OrderManagementSystem;
 
 public class Customer {
-    private String name;
-    private String email;
+    private final String name;
+    private final String email;
 
 
     public String getEmail() {
