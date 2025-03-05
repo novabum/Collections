@@ -18,8 +18,8 @@ public class OrderManager {
     /*public, hogy bárhonnan hozzáférhető legyen
     * localdate-et ad vissza
     * egy vásárlót (value vár paraméterként)
-    * usert kap, végigiterál a placedordereken és a azonosítja a kulcsot (order),
-    * majd abból kinyerem a dátumokat és belerakom egy ArrayLIstbe
+    * vásárlót kap, végigiterál a placedordereken és ha talál, azonosítja a kulcsát (order),
+    * majd abból kinyerem a dátumokat és belerakom egy üres ArrayLIstbe
     * Megkeresem közöttük a legfrissebbet.
     * insert -two hours later- picture here
     * */

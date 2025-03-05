@@ -3,7 +3,7 @@ package BookLibrarySystem;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+//itt történik a könyvek tárolása és velük kapcsolatos műveletek.
 public class Library {
     private Set<Book> books;
 

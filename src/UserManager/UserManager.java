@@ -47,7 +47,7 @@ public class UserManager {
     public, hogy meghívhható legyen Mainből
     egy user List-et ad vissza
     egy email címet vár paraméterként, a duplikációkat is visszaadja.
-    ha az első találat után meg kellene állnia, kellene az ifbe egy brake
+    ha az első találat után meg kellene állnia, kellene az ifbe egy brék
     */
     public List<User> getUsersByEmail(String email){
         List<User> userFound = new ArrayList<>(List.of());
