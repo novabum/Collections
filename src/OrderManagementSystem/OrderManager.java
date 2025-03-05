@@ -21,14 +21,14 @@ public class OrderManager {
         customerOrders.put(customer, listOfOrders);
     }
 
-    //most meg kellene találni emailcím alapján a usert
-    //majd a user alapján a vásálásokon végigmenni
-    //
+/*
+* A Map keysetjein, amik a customerek,  végigiterálok
+* és a vásárló alapján másik listába teszem a talált user rendeléseit.
+* ezt átadom a getLatestOrder-nek, hogy megkeresse a legfrissebbet
+* */
     public Order getLatestOrderOfUser(String email) {
-        List<Customer> customersInMap = new ArrayList<>();
         List<Order> foundOrders = new ArrayList<>();
-        customersInMap.addAll(customerOrders.keySet());
-        for (Customer customer : customersInMap) {
+        for (Customer customer : customerOrders.keySet()) {
             if (customer.getEmail().equals(email)) {
                 foundOrders = customerOrders.get(customer);
             }
@@ -36,7 +36,11 @@ public class OrderManager {
         return getLatestOrder(foundOrders); //getLatestOrder of orders method eredménye
     }
 
-    // privi,mert csak classom belül használom
+    /* privi,mert csak classom belül használom,
+    * az előző methodban userhez talált rendelések
+    * listájában megkeressük a legfrissebbet
+    * feltételezve, hogy az első a legfrissebb
+    * és visszadobjuk a rendelést magát. */
     private Order getLatestOrder(List<Order> orders) {
         Order latestorder = orders.get(0);
         for (Order order : orders) {
@@ -45,16 +49,25 @@ public class OrderManager {
             }
         }
         return latestorder;
-
     }
 }
-//        for (Customer customer : customerOrders.keySet() {
-//            if (customer)
+//    public Order asd(){
+//        for (Customer customer : customerOrders.keySet()) {
+//            if (customer.getEmail())
+//        }
+//    }
+
+//        public Order getLatestOrderOfUser(String email) {
+//            List<Customer> customersInMap = new ArrayList<>();
+//            List<Order> foundOrders = new ArrayList<>();
+//            customersInMap.addAll(customerOrders.keySet());
+//            for (Customer customer : customersInMap) {
+//                if (customer.getEmail().equals(email)) {
+//                    foundOrders = customerOrders.get(customer);
+//                }
+//            }
+//            return getLatestOrder(foundOrders); //getLatestOrder of orders method eredménye
 //        }
 
-
-//    private void findUserByEmail(String email){
-//        for (User user : )
-//    }
 
 
